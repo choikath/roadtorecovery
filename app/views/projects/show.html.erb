@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+
+    
+    <div class="col-sm-6"> 
+    <%= render "project", project: @project %>
+
+    </div>
+
+<div class="row">
+    <a href="<%= edit_project_path(@project) %>" class="btn btn-raised">Edit project details &nbsp;<i class="material-icons md-18">edit</i></a>
+      &nbsp;&nbsp; 
+    <a href="<%= projects_path %>" class="btn btn-raised"><i class="material-icons md-18">home</i></a>
+  </div>

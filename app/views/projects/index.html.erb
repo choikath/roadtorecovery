@@ -1,0 +1,88 @@
+
+
+<p id="notice"><%= notice %></p>
+ 
+ 
+<div class="page-header" align="center" id="banner">
+<div class="row">
+<div class="col-sm-6">
+
+<img src="../../assets/images/mskqr.png" width="150" height="150" alt="Mskqr">
+
+
+<h1>Your Journey to Recovery</h1>
+<p class="lead">Welcome, we are here to help prepare you for your big day!  <br><br>The following are the stations you are scheduled to visit to make sure you are safe for surgery. As a thank you, we will provide you an Uber coupon when you have completed your day. If you have trouble at any point, please talk to anyone at the registration desk, or call <a href = "https://voice.google.com/"> 555-397-2666</a> and your patient care coordinator will help you with anything!</p>
+</div>
+
+<div class="col-sm-6">
+<p>
+
+
+<a href = "#activebookm" style="color:#03a9f4">not completed</a>&nbsp;
+<a href = "#completedbookm" style="color:#4caf50">completed</a> &nbsp;//&nbsp; 
+<a href ="<%= users_path %>" style="color:#222222"> Who am I meeting?</a>
+ &nbsp;//&nbsp; 
+ <a href = "https://wikipedia.com/" style="color:#222222"> Learn more about your surgery >></a>
+</p></div>
+</div></div>
+
+
+<div class="row"><p><br></p></div>
+
+
+
+
+
+  
+<% allcompletedprojects = @projects.where(complete: true).order(datecreated: :desc) %>
+
+
+<% allactiveprojects = @projects.where(approved: true).order(datecreated: :desc)%>
+
+
+
+     
+ <div class="row" id="activebookm">
+     <a href="" class="btn btn-raised btn-info">Not Completed</a>
+
+   </div>
+
+ <div class="row">
+
+<% if allactiveprojects.empty?() != true %>
+ <% allactiveprojects.each do |project|%>
+ <% if project.exists %>
+  <div class="col-sm-6"> 
+  <%= render "project", project: project %>
+
+  </div>
+  <% else %>
+  <% end %> <!-- closes if exists statement -->
+  <% end %> <!-- closes projects loop -->    
+  <% end %>
+ </div> 
+ 
+ 
+ <div class="row" id="completedbookm">
+     <a href="" class="btn btn-raised btn-success">Completed</a>
+  
+   </div>
+
+ <div class="row">
+
+ <% if allcompletedprojects.empty?() != true %>
+ <% allcompletedprojects.each do |project|%>
+ <% if project.exists %>
+  <div class="col-sm-6"> 
+  <%= render "project", project: project %>
+
+  </div>
+  <% else %>
+  <% end %> <!-- closes if exists statement -->
+  <% end %> <!-- closes projects loop -->    
+  <% end %>
+ </div>
+    
+    
+  
+ <!--<%= link_to 'New Project', new_project_path %>-->

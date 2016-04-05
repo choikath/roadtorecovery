@@ -1,0 +1,75 @@
+
+
+<p id="notice"><%= notice %></p>
+ 
+ 
+<div class="page-header" align="center" id="banner">
+<div class="row">
+<div class="col-sm-6">
+<h1>mHealth Labs Project Deck - Admin View</h1>
+<p class="lead">The past and current projects, sorted by status</p>
+</div>
+
+<div class="col-sm-6">
+<small style="color:#4caf50">&nbsp; completed</small>
+<small style="color:#03a9f4">&nbsp; active</small>
+<small style="color:#FFAB12">&nbsp; backlog</small>
+
+</p></div>
+</div></div>
+
+
+<% allcompletedprojects = @projects.where(complete: true).order(datecreated: :desc) %>
+
+
+<% allactiveprojects = @projects.where(approved: true).order(datecreated: :desc)%>
+
+
+<div class="row">
+    <a href="" class="btn btn-raised btn-success">Completed</a>
+  
+  </div>
+
+<div class="row">
+
+<% if allcompletedprojects.empty?() != true %>
+<% allcompletedprojects.each do |project|%>
+<% if project.exists %>
+ <div class="col-sm-6"> 
+ <%= render "project", project: project %>
+
+ </div>
+ <% else %>
+ <% end %> <!-- closes if exists statement -->
+ <% end %> <!-- closes projects loop -->    
+ <% end %>
+</div> 
+
+
+ <div class="row" id="activebookm">
+     <a href="" class="btn btn-raised btn-info">Active</a>
+
+   </div>
+
+ <div class="row">
+
+<% if allactiveprojects.empty?() != true %>
+ <% allactiveprojects.each do |project|%>
+ <% if project.exists %>
+  <div class="col-sm-6"> 
+  <%= render "project", project: project %>
+
+  </div>
+  <% else %>
+  <% end %> <!-- closes if exists statement -->
+  <% end %> <!-- closes projects loop -->    
+  <% end %>
+ </div> 
+ 
+ 
+     
+    </body>
+    
+    
+<%= link_to 'First Add New Team Members', new_user_path %>  
+<%= link_to 'New Project', new_project_path %>

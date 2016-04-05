@@ -1,0 +1,23 @@
+ <div class="well infobox" onclick="document.location='/projects/<%= project.id %>'">
+    
+     
+     
+     
+     <h2><%= project.name %></h2>
+     <p>
+     <% project.user_ids.each do |uid| %>
+	 	<% each_user = User.find(uid) %>
+		<% if each_user.usertype == "1" %>
+			<font size="1px"><%= each_user.name %> <i><%= each_user.school%></i></font> 
+		<% elsif each_user.usertype == "2" %>
+			<%= each_user.name %>,&nbsp;<%= each_user.title %>
+		<%end%> 
+     </p>
+     <p>
+     <%= project.description %> 
+     </p>
+     
+	 <% end %>
+     
+   
+ </div>

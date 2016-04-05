@@ -1,0 +1,72 @@
+<p id="notice"><%= notice %></p>
+
+  <div class="container">
+	  
+<h1>We're here to support you!</h1>
+
+<table class="table table-hover" class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Prep Step</th>
+	  <th>Team Member Name</th>
+	  <th>Affiliation</th>
+      <th>What they can answer</th>
+      <th>Email</th>
+      <th>Phone</th>
+	  <th colspan="1"></th>
+	 
+      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% Project.all.each do |project| %>
+
+	<% if project.exists %>
+	  <tr onclick="document.location='/projects/<%= project.id %>/edit'">
+		  <td><%= project.name %>
+		  </td>
+  		
+		
+    <% project.user_ids.each do |uid| %>
+      <% each_user = User.find(uid) %>
+	  <tr onclick="document.location='/users/<%= each_user.id %>/edit'">
+		  <td></td>
+
+        <td><%= each_user.name %></td>
+        <td><% if each_user.usertype == "1" %>Student
+			<% elsif each_user.usertype == "2" %>UPHS
+			<% else each_user.usertype == "3" %>Other
+			<% end %>
+		</td>
+		<td><% if each_user.needs_hipaa %>
+				<% if each_user.done_hipaa %> [x]
+				<% else %> [ ]
+				<% end %>
+			<% end %></td>
+		<td><% if each_user.needs_csa %>
+				<% if each_user.done_csa %> [x]
+				<% else %> [ ]
+				<% end %>
+			<% end %></td>
+		<td><% if each_user.needs_ipa %>
+				<% if each_user.done_ipa %> [x]
+				<% else %> [ ]
+				<% end %>
+			<% end %></td>
+
+        
+        <td><%= link_to '', each_user, method: :delete, data: { confirm: 'Are you sure?' }, class:"fa fa-trash" %></td>
+      </tr>
+    <% end %>
+		
+	</tr>
+	<% end %>
+	<% end %>
+  </tbody>
+</table>
+
+<br>
+</div>
+
+<%= link_to 'Add New User', new_user_path, class:"btn btn-info" %>

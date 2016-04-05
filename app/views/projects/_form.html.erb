@@ -1,0 +1,81 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="">
+<form class="form-horizontal">
+
+  <div class="container">
+    
+     
+  <p>
+  <!-- delete status management here -->
+   <label class="control-label red">Keep entry? &nbsp;</label>
+    <%= f.check_box :exists %><br>
+
+
+   <label class="control-label">IRB: Needed? &nbsp;</label>
+    <%= f.check_box :needs_irb %>&nbsp;&nbsp;&nbsp;&nbsp;
+
+   <label class="control-label">Done? &nbsp;</label>
+    <%= f.check_box :done_irb %><br>
+  
+   
+ 
+   <br>
+   <br>
+   <label class="control-label">Name</label>
+       <h2><%= f.text_field :name, cols: 6 %></h2>
+       
+        <label class="control-label">Team Members</label><br>
+		<% User.all.each do |user| %>
+		<label class="control-label"><%= user.name %>:</label>&nbsp;
+		<%= check_box_tag "project[user_ids][]", user.id, @project.user_ids.include?(user.id) || @project.user_ids.include?("#{user.id}") %>	&nbsp;&nbsp;&nbsp;	
+		<% end %>
+		
+		
+		<br><br><label class="control-label">Description</label><br>
+		<%= f.text_area :description , cols: 40, rows: 10 %>
+
+
+
+  <br><br>
+	<label class="control-label green">completed?&nbsp;</label>
+	 	<%= f.check_box :complete %>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+    <label class="control-label blue">approved?&nbsp;</label>
+		<%= f.check_box :approved %>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <label class="control-label yellow">in backlog?&nbsp;</label>
+    	<%= f.check_box :backlog %> 
+	
+  
+  
+  
+
+
+
+  </div>  
+  <div class="actions">
+
+  </div>
+<%= f.submit "Save", class:"btn btn-raised btn-success" %>
+
+
+<% end %>
+
+
+
+</form>
+
+
+  
