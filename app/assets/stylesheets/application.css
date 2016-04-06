@@ -34,6 +34,9 @@
  
  p, body {font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif; }
  
- a:hover {
+ a:focus {
+	 color: #ba68c8;
+ }
+ a:hover {	 
    background-color: #e5e5e5;
 }
