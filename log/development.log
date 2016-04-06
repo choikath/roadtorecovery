@@ -21526,3 +21526,650 @@ ActionController::RoutingError (No route matches [GET] "/assets/ripples.min.js.m
   Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
   Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
   Rendered /Library/Ruby/Gems/2.0.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (62.3ms)
+
+
+Started GET "/projects" for ::1 at 2016-04-06 16:34:32 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProjectsController#index as HTML
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."approved" = ?  [["approved", "t"]]
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."approved" = ?  ORDER BY "projects"."datecreated" DESC[0m  [["approved", "t"]]
+  Rendered projects/_project.html.erb (1.0ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."complete" = ?  [["complete", "t"]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."complete" = ?  ORDER BY "projects"."datecreated" ASC[0m  [["complete", "t"]]
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered projects/_project.html.erb (17.6ms)
+  Rendered projects/_project.html.erb (0.2ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."backlog" = ?  [["backlog", "t"]]
+  Rendered projects/index.html.erb within layouts/application (70.2ms)
+Completed 200 OK in 877ms (Views: 860.7ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/assets/scaffolds.self-de7da7802d594c53591ad19fb2fc50d4258f5f096408609f728a0174570a020e.css?body=1" for ::1 at 2016-04-06 16:34:33 -0400
+
+
+Started GET "/projects/1" for ::1 at 2016-04-06 16:34:51 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered projects/_project.html.erb (1.9ms)
+  Rendered projects/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 65ms (Views: 63.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/2" for ::1 at 2016-04-06 16:35:18 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 47ms (Views: 45.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/projects/6" for ::1 at 2016-04-06 16:36:10 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 75ms (Views: 74.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/projects" for ::1 at 2016-04-06 16:36:21 -0400
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."approved" = ?  [["approved", "t"]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."approved" = ?  ORDER BY "projects"."datecreated" DESC[0m  [["approved", "t"]]
+  Rendered projects/_project.html.erb (1.0ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."complete" = ?  [["complete", "t"]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."complete" = ?  ORDER BY "projects"."datecreated" ASC[0m  [["complete", "t"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered projects/_project.html.erb (2.0ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/_project.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."backlog" = ?  [["backlog", "t"]]
+  Rendered projects/index.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 66ms (Views: 64.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects/5" for ::1 at 2016-04-06 16:36:29 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered projects/_project.html.erb (0.2ms)
+  Rendered projects/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 49ms (Views: 47.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/projects" for ::1 at 2016-04-06 16:36:48 -0400
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."approved" = ?  [["approved", "t"]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."approved" = ?  ORDER BY "projects"."datecreated" DESC[0m  [["approved", "t"]]
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/_project.html.erb (0.2ms)
+  Rendered projects/_project.html.erb (0.2ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."complete" = ?  [["complete", "t"]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."complete" = ?  ORDER BY "projects"."datecreated" ASC[0m  [["complete", "t"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered projects/_project.html.erb (1.6ms)
+  Rendered projects/_project.html.erb (0.3ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."backlog" = ?  [["backlog", "t"]]
+  Rendered projects/index.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 126ms (Views: 123.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/4" for ::1 at 2016-04-06 16:37:40 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 74ms (Views: 73.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/projects" for ::1 at 2016-04-06 16:55:20 -0400
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."approved" = ?  [["approved", "t"]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."approved" = ?  ORDER BY "projects"."datecreated" DESC[0m  [["approved", "t"]]
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."complete" = ?  [["complete", "t"]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."complete" = ?  ORDER BY "projects"."datecreated" ASC[0m  [["complete", "t"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered projects/_project.html.erb (0.9ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."backlog" = ?  [["backlog", "t"]]
+  Rendered projects/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 91ms (Views: 89.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap-material-design.self-e5f61fd0268825b561076040a4d5cb908e80c908c9d2b7e3ea1eb3a820d2923f.css?body=1" for ::1 at 2016-04-06 16:55:21 -0400
+
+
+Started GET "/assets/bootstrap-material-design.min.self-60967652397b275a54dae19911695a13559a06574fe8f45a3a1116090e3e51be.css?body=1" for ::1 at 2016-04-06 16:55:21 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-06 16:55:21 -0400
+
+
+Started GET "/assets/ripples.min.self-b71b065ec420e4db45c5e5f85b3f3a5e236916e292c9ac1dc5e38624004ce438.css?body=1" for ::1 at 2016-04-06 16:55:21 -0400
+
+
+Started GET "/assets/scaffolds.self-de7da7802d594c53591ad19fb2fc50d4258f5f096408609f728a0174570a020e.css?body=1" for ::1 at 2016-04-06 16:55:21 -0400
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-06 16:55:21 -0400
+
+
+Started GET "/assets/ripples.self-ee552b7f0895f33b5f9d230c0892e3f3351e9fcdf7775b635609da6ff161c714.css?body=1" for ::1 at 2016-04-06 16:55:21 -0400
+
+
+Started GET "/assets/application.self-cad7abee861879784887ef0e10391bc41ed03aef39e5cfaca8df20331e2d8b10.css?body=1" for ::1 at 2016-04-06 16:55:21 -0400
+
+
+Started GET "/assets/material.self-1368856478046588f05aa754c8a181488d26e6e574739dd4ec8f639166e81dc7.js?body=1" for ::1 at 2016-04-06 16:55:21 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-04-06 16:55:21 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-06 16:55:21 -0400
+
+
+Started GET "/assets/material.min.self-c25ac0f361142a489ec77a51c044445109533c0607fb77d8f0754a40422536a7.js?body=1" for ::1 at 2016-04-06 16:55:21 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-04-06 16:55:21 -0400
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-06 16:55:21 -0400
+
+
+Started GET "/assets/ripples.self-5817401e44992b5dbe64299238f350ebd89e161b5a49ac7c90a2d167a93a1e62.js?body=1" for ::1 at 2016-04-06 16:55:21 -0400
+
+
+Started GET "/assets/ripples.min.self-694723e2b2814bfbba56d969ededb398f4b91d08ea541e685cf9bb744f935802.js?body=1" for ::1 at 2016-04-06 16:55:21 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-06 16:55:21 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-06 16:55:21 -0400
+
+
+Started GET "/projects/new" for ::1 at 2016-04-06 16:55:25 -0400
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered projects/_form.html.erb (22.7ms)
+  Rendered projects/new.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 70ms (Views: 68.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/projects" for ::1 at 2016-04-06 16:57:20 -0400
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IxnD9u4SRlV8UCH/YiMgOUd1zVJRrss+tO5H7t7XFc6x9CDg0gENnuG9sR7KAXz7+WaLmn+r2s056gd5GWK/TQ==", "project"=>{"exists"=>"1", "needs_irb"=>"0", "done_irb"=>"0", "name"=>"4/29/16 = Day of Surgery", "user_ids"=>["2"], "description"=>"Do not eat or drink anything starting at midnight. On the morning of your surgery, only take the medications instructed to you: - Med 1 - Med 2 - Med 3 Read more about risks and outcomes at: http://pennmedicine.org/msk", "complete"=>"0", "approved"=>"0", "backlog"=>"1"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.3ms)[0m  [1mINSERT INTO "projects" ("name", "description", "complete", "backlog", "approved", "exists", "user_ids", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "4/29/16 = Day of Surgery"], ["description", "Do not eat or drink anything starting at midnight. On the morning of your surgery, only take the medications instructed to you: - Med 1 - Med 2 - Med 3 Read more about risks and outcomes at: http://pennmedicine.org/msk"], ["complete", "f"], ["backlog", "t"], ["approved", "f"], ["exists", "t"], ["user_ids", "[2]"], ["created_at", "2016-04-06 20:57:20.028353"], ["updated_at", "2016-04-06 20:57:20.028353"]]
+  [1m[35mSQL (0.4ms)[0m  UPDATE "projects" SET "name" = ?, "description" = ?, "complete" = ?, "backlog" = ?, "approved" = ?, "exists" = ?, "user_ids" = ?, "created_at" = ?, "updated_at" = ?, "id" = ?, "datecreated" = ? WHERE "projects"."id" = ?  [["name", "4/29/16 = Day of Surgery"], ["description", "Do not eat or drink anything starting at midnight. On the morning of your surgery, only take the medications instructed to you: - Med 1 - Med 2 - Med 3 Read more about risks and outcomes at: http://pennmedicine.org/msk"], ["complete", "f"], ["backlog", "t"], ["approved", "f"], ["exists", "t"], ["user_ids", "[2]"], ["created_at", "2016-04-06 20:57:20.028353"], ["updated_at", "2016-04-06 20:57:20.028353"], ["id", 8], ["datecreated", "2016-04-06 20:57:20.031864"], ["id", 8]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/projects/8
+Completed 302 Found in 12ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/projects/8" for ::1 at 2016-04-06 16:57:20 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered projects/_project.html.erb (0.7ms)
+  Rendered projects/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 87ms (Views: 86.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/projects" for ::1 at 2016-04-06 16:57:21 -0400
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."approved" = ?  [["approved", "t"]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."approved" = ?  ORDER BY "projects"."datecreated" DESC[0m  [["approved", "t"]]
+  Rendered projects/_project.html.erb (0.2ms)
+  Rendered projects/_project.html.erb (0.2ms)
+  Rendered projects/_project.html.erb (0.2ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."complete" = ?  [["complete", "t"]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."complete" = ?  ORDER BY "projects"."datecreated" ASC[0m  [["complete", "t"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered projects/_project.html.erb (2.2ms)
+  Rendered projects/_project.html.erb (0.2ms)
+  Rendered projects/_project.html.erb (0.2ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."backlog" = ?  [["backlog", "t"]]
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."backlog" = ?  ORDER BY "projects"."datecreated" ASC[0m  [["backlog", "t"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered projects/_project.html.erb (0.8ms)
+  Rendered projects/index.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 130ms (Views: 127.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/projects/new" for ::1 at 2016-04-06 16:57:36 -0400
+Processing by ProjectsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered projects/_form.html.erb (2.9ms)
+  Rendered projects/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 48ms (Views: 46.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/projects" for ::1 at 2016-04-06 16:57:45 -0400
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gfEBdrRPtZwoIwe4u4A0QOcNjuCtcK7GCvDv6+JS9hUTHOJgiFz+V7XOl1kTomiCWR7IKIN1vzWH9K98Jedclg==", "project"=>{"exists"=>"1", "needs_irb"=>"0", "done_irb"=>"0", "name"=>"Hospital Stay", "description"=>"After surgery, you will spend 2-3 days on the inpatient floor as you recover from your surgery.", "complete"=>"0", "approved"=>"0", "backlog"=>"1"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "projects" ("name", "description", "complete", "backlog", "approved", "exists", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Hospital Stay"], ["description", "After surgery, you will spend 2-3 days on the inpatient floor as you recover from your surgery."], ["complete", "f"], ["backlog", "t"], ["approved", "f"], ["exists", "t"], ["created_at", "2016-04-06 20:57:45.013145"], ["updated_at", "2016-04-06 20:57:45.013145"]]
+  [1m[35mSQL (1.1ms)[0m  UPDATE "projects" SET "name" = ?, "description" = ?, "complete" = ?, "backlog" = ?, "approved" = ?, "exists" = ?, "created_at" = ?, "updated_at" = ?, "id" = ?, "datecreated" = ? WHERE "projects"."id" = ?  [["name", "Hospital Stay"], ["description", "After surgery, you will spend 2-3 days on the inpatient floor as you recover from your surgery."], ["complete", "f"], ["backlog", "t"], ["approved", "f"], ["exists", "t"], ["created_at", "2016-04-06 20:57:45.013145"], ["updated_at", "2016-04-06 20:57:45.013145"], ["id", 9], ["datecreated", "2016-04-06 20:57:45.014801"], ["id", 9]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/projects/9
+Completed 302 Found in 11ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/projects/9" for ::1 at 2016-04-06 16:57:45 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mProject Load (0.1ms)[0m  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 9]]
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 61ms (Views: 60.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/projects" for ::1 at 2016-04-06 16:58:43 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."approved" = ?[0m  [["approved", "t"]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."approved" = ?  ORDER BY "projects"."datecreated" DESC  [["approved", "t"]]
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/_project.html.erb (0.2ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."complete" = ?[0m  [["complete", "t"]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."complete" = ?  ORDER BY "projects"."datecreated" ASC  [["complete", "t"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered projects/_project.html.erb (2.0ms)
+  Rendered projects/_project.html.erb (0.2ms)
+  Rendered projects/_project.html.erb (0.3ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."backlog" = ?[0m  [["backlog", "t"]]
+  [1m[35mProject Load (0.1ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."backlog" = ?  ORDER BY "projects"."datecreated" ASC  [["backlog", "t"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered projects/_project.html.erb (0.4ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/index.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 90ms (Views: 88.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/projects/new" for ::1 at 2016-04-06 16:58:56 -0400
+Processing by ProjectsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered projects/_form.html.erb (2.4ms)
+  Rendered projects/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 87ms (Views: 86.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/projects" for ::1 at 2016-04-06 16:59:05 -0400
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tgd4jiLqCEV43P4ZqTx2zC8FtxKl9at+St+swboes0ok6puYHvlDjuUxbvgBHioOkRbx2ovwuo3H2+xWfasZyQ==", "project"=>{"exists"=>"1", "needs_irb"=>"0", "done_irb"=>"0", "name"=>"Home + PT", "description"=>"You will return home and attend 4-6 weeks of outpatient physical therapy. Expect to use a walker for 2-4 weeks to help with the pain. Most patients have improvement in pain within 1 month and start moving around better.", "complete"=>"0", "approved"=>"0", "backlog"=>"1"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "projects" ("name", "description", "complete", "backlog", "approved", "exists", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Home + PT"], ["description", "You will return home and attend 4-6 weeks of outpatient physical therapy. Expect to use a walker for 2-4 weeks to help with the pain. Most patients have improvement in pain within 1 month and start moving around better."], ["complete", "f"], ["backlog", "t"], ["approved", "f"], ["exists", "t"], ["created_at", "2016-04-06 20:59:05.092907"], ["updated_at", "2016-04-06 20:59:05.092907"]]
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "projects" SET "name" = ?, "description" = ?, "complete" = ?, "backlog" = ?, "approved" = ?, "exists" = ?, "created_at" = ?, "updated_at" = ?, "id" = ?, "datecreated" = ? WHERE "projects"."id" = ?[0m  [["name", "Home + PT"], ["description", "You will return home and attend 4-6 weeks of outpatient physical therapy. Expect to use a walker for 2-4 weeks to help with the pain. Most patients have improvement in pain within 1 month and start moving around better."], ["complete", "f"], ["backlog", "t"], ["approved", "f"], ["exists", "t"], ["created_at", "2016-04-06 20:59:05.092907"], ["updated_at", "2016-04-06 20:59:05.092907"], ["id", 10], ["datecreated", "2016-04-06 20:59:05.096009"], ["id", 10]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/projects/10
+Completed 302 Found in 10ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/projects/10" for ::1 at 2016-04-06 16:59:05 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 10]]
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 56ms (Views: 54.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/projects" for ::1 at 2016-04-06 16:59:09 -0400
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."approved" = ?  [["approved", "t"]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."approved" = ?  ORDER BY "projects"."datecreated" DESC[0m  [["approved", "t"]]
+  Rendered projects/_project.html.erb (0.2ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/_project.html.erb (0.2ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."complete" = ?  [["complete", "t"]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."complete" = ?  ORDER BY "projects"."datecreated" ASC[0m  [["complete", "t"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered projects/_project.html.erb (3.2ms)
+  Rendered projects/_project.html.erb (0.2ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."backlog" = ?  [["backlog", "t"]]
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."backlog" = ?  ORDER BY "projects"."datecreated" ASC[0m  [["backlog", "t"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered projects/_project.html.erb (0.6ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/index.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 89ms (Views: 86.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users" for ::1 at 2016-04-06 16:59:24 -0400
+Processing by UsersController#index as HTML
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects"  ORDER BY "projects"."name" ASC[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered users/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 51ms (Views: 49.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for ::1 at 2016-04-06 17:01:47 -0400
+Processing by UsersController#index as HTML
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects"  ORDER BY "projects"."name" ASC[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered users/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 70ms (Views: 68.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap-material-design.min.self-60967652397b275a54dae19911695a13559a06574fe8f45a3a1116090e3e51be.css?body=1" for ::1 at 2016-04-06 17:01:47 -0400
+
+
+Started GET "/assets/bootstrap-material-design.self-e5f61fd0268825b561076040a4d5cb908e80c908c9d2b7e3ea1eb3a820d2923f.css?body=1" for ::1 at 2016-04-06 17:01:47 -0400
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-06 17:01:47 -0400
+
+
+Started GET "/assets/ripples.self-ee552b7f0895f33b5f9d230c0892e3f3351e9fcdf7775b635609da6ff161c714.css?body=1" for ::1 at 2016-04-06 17:01:47 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-06 17:01:47 -0400
+
+
+Started GET "/assets/ripples.min.self-b71b065ec420e4db45c5e5f85b3f3a5e236916e292c9ac1dc5e38624004ce438.css?body=1" for ::1 at 2016-04-06 17:01:47 -0400
+
+
+Started GET "/assets/scaffolds.self-de7da7802d594c53591ad19fb2fc50d4258f5f096408609f728a0174570a020e.css?body=1" for ::1 at 2016-04-06 17:01:47 -0400
+
+
+Started GET "/assets/application.self-cad7abee861879784887ef0e10391bc41ed03aef39e5cfaca8df20331e2d8b10.css?body=1" for ::1 at 2016-04-06 17:01:47 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-04-06 17:01:47 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-06 17:01:47 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-04-06 17:01:47 -0400
+
+
+Started GET "/assets/material.self-1368856478046588f05aa754c8a181488d26e6e574739dd4ec8f639166e81dc7.js?body=1" for ::1 at 2016-04-06 17:01:47 -0400
+
+
+Started GET "/assets/ripples.self-5817401e44992b5dbe64299238f350ebd89e161b5a49ac7c90a2d167a93a1e62.js?body=1" for ::1 at 2016-04-06 17:01:47 -0400
+
+
+Started GET "/assets/ripples.min.self-694723e2b2814bfbba56d969ededb398f4b91d08ea541e685cf9bb744f935802.js?body=1" for ::1 at 2016-04-06 17:01:47 -0400
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-06 17:01:47 -0400
+
+
+Started GET "/assets/material.min.self-c25ac0f361142a489ec77a51c044445109533c0607fb77d8f0754a40422536a7.js?body=1" for ::1 at 2016-04-06 17:01:47 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-06 17:01:47 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-06 17:01:47 -0400
+
+
+Started GET "/users/1/edit" for ::1 at 2016-04-06 17:03:14 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/_form.html.erb (5.4ms)
+  Rendered users/edit.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 70ms (Views: 69.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/projects" for ::1 at 2016-04-06 17:03:24 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."approved" = ?[0m  [["approved", "t"]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."approved" = ?  ORDER BY "projects"."datecreated" DESC  [["approved", "t"]]
+  Rendered projects/_project.html.erb (0.2ms)
+  Rendered projects/_project.html.erb (0.2ms)
+  Rendered projects/_project.html.erb (0.2ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."complete" = ?[0m  [["complete", "t"]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."complete" = ?  ORDER BY "projects"."datecreated" ASC  [["complete", "t"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered projects/_project.html.erb (1.6ms)
+  Rendered projects/_project.html.erb (0.4ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE "projects"."backlog" = ?[0m  [["backlog", "t"]]
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."backlog" = ?  ORDER BY "projects"."datecreated" ASC  [["backlog", "t"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered projects/_project.html.erb (0.9ms)
+  Rendered projects/_project.html.erb (0.2ms)
+  Rendered projects/_project.html.erb (0.2ms)
+  Rendered projects/index.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 93ms (Views: 90.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects" for ::1 at 2016-04-06 17:03:24 -0400
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."approved" = ?  [["approved", "t"]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."approved" = ?  ORDER BY "projects"."datecreated" DESC[0m  [["approved", "t"]]
+  Rendered projects/_project.html.erb (0.2ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."complete" = ?  [["complete", "t"]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."complete" = ?  ORDER BY "projects"."datecreated" ASC[0m  [["complete", "t"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered projects/_project.html.erb (2.5ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/_project.html.erb (0.2ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."backlog" = ?  [["backlog", "t"]]
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."backlog" = ?  ORDER BY "projects"."datecreated" ASC[0m  [["backlog", "t"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered projects/_project.html.erb (0.6ms)
+  Rendered projects/_project.html.erb (0.2ms)
+  Rendered projects/_project.html.erb (0.3ms)
+  Rendered projects/index.html.erb within layouts/application (30.2ms)
+Completed 200 OK in 118ms (Views: 116.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/projects/6" for ::1 at 2016-04-06 17:03:35 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProject Load (0.1ms)[0m  [1mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 54ms (Views: 53.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/projects" for ::1 at 2016-04-06 17:06:15 -0400
+Processing by ProjectsController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."approved" = ?  [["approved", "t"]]
+  [1m[36mProject Load (0.5ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."approved" = ?  ORDER BY "projects"."datecreated" DESC[0m  [["approved", "t"]]
+  Rendered projects/_project.html.erb (0.9ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."complete" = ?  [["complete", "t"]]
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."complete" = ?  ORDER BY "projects"."datecreated" ASC[0m  [["complete", "t"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered projects/_project.html.erb (2.4ms)
+  Rendered projects/_project.html.erb (0.4ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE "projects"."backlog" = ?  [["backlog", "t"]]
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."backlog" = ?  ORDER BY "projects"."datecreated" ASC[0m  [["backlog", "t"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered projects/_project.html.erb (0.8ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/_project.html.erb (0.1ms)
+  Rendered projects/index.html.erb within layouts/application (51.1ms)
+Completed 200 OK in 275ms (Views: 265.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/bootstrap-material-design.self-e5f61fd0268825b561076040a4d5cb908e80c908c9d2b7e3ea1eb3a820d2923f.css?body=1" for ::1 at 2016-04-06 17:06:15 -0400
+
+
+Started GET "/assets/bootstrap-material-design.min.self-60967652397b275a54dae19911695a13559a06574fe8f45a3a1116090e3e51be.css?body=1" for ::1 at 2016-04-06 17:06:15 -0400
+
+
+Started GET "/assets/ripples.self-ee552b7f0895f33b5f9d230c0892e3f3351e9fcdf7775b635609da6ff161c714.css?body=1" for ::1 at 2016-04-06 17:06:15 -0400
+
+
+Started GET "/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-06 17:06:15 -0400
+
+
+Started GET "/assets/ripples.min.self-b71b065ec420e4db45c5e5f85b3f3a5e236916e292c9ac1dc5e38624004ce438.css?body=1" for ::1 at 2016-04-06 17:06:15 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-04-06 17:06:15 -0400
+
+
+Started GET "/assets/application.self-cad7abee861879784887ef0e10391bc41ed03aef39e5cfaca8df20331e2d8b10.css?body=1" for ::1 at 2016-04-06 17:06:15 -0400
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-04-06 17:06:15 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-04-06 17:06:15 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-04-06 17:06:15 -0400
+
+
+Started GET "/assets/material.self-1368856478046588f05aa754c8a181488d26e6e574739dd4ec8f639166e81dc7.js?body=1" for ::1 at 2016-04-06 17:06:15 -0400
+
+
+Started GET "/assets/material.min.self-c25ac0f361142a489ec77a51c044445109533c0607fb77d8f0754a40422536a7.js?body=1" for ::1 at 2016-04-06 17:06:15 -0400
+
+
+Started GET "/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-06 17:06:15 -0400
+
+
+Started GET "/assets/ripples.self-5817401e44992b5dbe64299238f350ebd89e161b5a49ac7c90a2d167a93a1e62.js?body=1" for ::1 at 2016-04-06 17:06:15 -0400
+
+
+Started GET "/assets/ripples.min.self-694723e2b2814bfbba56d969ededb398f4b91d08ea541e685cf9bb744f935802.js?body=1" for ::1 at 2016-04-06 17:06:15 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-04-06 17:06:15 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-04-06 17:06:15 -0400
+
+
+Started GET "/assets/images/mskqr.png" for ::1 at 2016-04-06 17:06:15 -0400
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/mskqr.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/katherinechoi/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/katherinechoi/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/katherinechoi/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (12.7ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.1ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.9ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (130.9ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (71.8ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (139.2ms)
+
+
+Started GET "/assets/scaffolds.self-de7da7802d594c53591ad19fb2fc50d4258f5f096408609f728a0174570a020e.css?body=1" for ::1 at 2016-04-06 17:06:16 -0400
+
+
+Started GET "/assets/images/mskqr.png" for ::1 at 2016-04-06 17:06:16 -0400
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/mskqr.png"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/katherinechoi/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/katherinechoi/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/katherinechoi/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (65.5ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (64.1ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/katherinechoi/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (122.2ms)
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-04-06 17:06:16 -0400

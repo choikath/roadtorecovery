@@ -20,9 +20,10 @@
   </thead>
 
   <tbody>
-    <% Project.all.each do |project| %>
+    <% Project.all.order(name: :asc).each do |project| %>
 
-	<% if project.exists %>
+	<% if project.exists & !project.backlog %>
+	
 	  <tr onclick="document.location='/projects/<%= project.id %>/edit'">
 		  <td><%= project.name %>
 		  </td>
