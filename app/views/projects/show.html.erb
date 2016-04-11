@@ -6,9 +6,17 @@
     <%= render "project", project: @project %>
 
     </div>
+<br><h4>	Learn more :</h4>
+<p><i>(will be specific to each step)</i></p>
+	<div class="col-sm-6 well infobox" onclick="document.location='https://www.pennmedicine.org/for-patients-and-visitors/find-a-program-or-service/musculoskeletal-and-rheumatology/penn-musculoskeletal-center'">
+ <a><i class="material-icons">perm_media</i></a>&nbsp;: The presentation slides covered in the session can be accessed <a>here</a>!
+		</div>
+	<div class="col-sm-6 well infobox" onclick="document.location='https://www.youtube.com/'">
+<a><i class="material-icons">videocam</i></a>&nbsp;: Strength exercises and physical therapy how-to's can be viewed again <a>here</a>!
+		</div>
 
 <div class="row">
-    <a href="<%= edit_project_path(@project) %>" class="btn btn-raised">Edit project details &nbsp;<i class="material-icons md-18">edit</i></a>
-      &nbsp;&nbsp; 
+    <!-- <a href="<%= edit_project_path(@project) %>" class="btn btn-raised">Edit project details &nbsp;<i class="material-icons md-18">edit</i></a>
+      &nbsp;&nbsp;  -->
     <a href="<%= projects_path %>" class="btn btn-raised"><i class="material-icons md-18">home</i></a>
   </div>

@@ -26,12 +26,23 @@
 <br>
 <a href ="<%= users_path %>" style="color:#222222"> Who am I meeting?</a>
  &nbsp;//&nbsp; 
- <a href = "https://wikipedia.com/" style="color:#222222"> Learn more about your surgery >></a>
+ <a href = "http://www.wikipedia.com/" style="color:#222222"> Learn more about your surgery >></a>
 </p></div>
 </div></div>
 
 
-<div class="row"><p><br></p></div>
+<div class="row"><p align="center">
+	
+	7th floor: &nbsp;
+	<a class="btn btn-success btn-fab"><i class="material-icons">opacity</i></a>
+	<a class="btn btn-success btn-fab"><i class="material-icons">favorite</i></a>
+	<a class="btn btn-success btn-fab"><i class="material-icons" >filter_b_and_w</i></a>
+	<a class="btn btn-default btn-fab"><i class="material-icons" style="color:#c0c0c0">content_paste</i></a>
+	<br>8th floor: &nbsp;
+	<a class="btn btn-default btn-fab"><i class="material-icons" style="color:#c0c0c0">beenhere</i></a>
+	<a class="btn btn-default btn-fab"><i class="material-icons" style="color:#c0c0c0">leak_add</i></a>
+	<a class="btn btn-default btn-fab"><i class="material-icons" style="color:#c0c0c0">healing</i></a>
+		<br></p></div>
 
 
 
@@ -54,7 +65,10 @@
 
  <div class="row">
 
-<% if allactiveprojects.empty?() != true %>
+<% if allactiveprojects.empty?() %>
+	<p>Congrats, you've finished your day!!  Please check out with the PCC on the 8th floor, where you will receive your Uber code.</p>  
+ 
+<% elsif allactiveprojects.empty?() != true %>
  <% allactiveprojects.each do |project|%>
  <% if project.exists %>
   <div class="col-sm-6"> 
@@ -63,7 +77,10 @@
   </div>
   <% else %>
   <% end %> <!-- closes if exists statement -->
-  <% end %> <!-- closes projects loop -->    
+  <% end %> <!-- closes projects loop --> 
+  
+
+     
   <% end %>
  </div> 
  

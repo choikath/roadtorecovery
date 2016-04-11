@@ -34,7 +34,11 @@
    <br>
    <br>
    <label class="control-label">Name</label>
-       <h2><%= f.text_field :name, cols: 6 %></h2>
+	   <h2><%= f.text_field :name, cols: 6 %></h2>
+
+   <label class="control-label">Location</label>
+       <h5><i><%= f.text_field :subtitle, cols: 6 %></i></h5>
+	   
        
         <label class="control-label">Team Members</label><br>
 		<% User.all.each do |user| %>

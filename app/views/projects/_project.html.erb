@@ -1,9 +1,39 @@
  <div class="well infobox" onclick="document.location='/projects/<%= project.id %>'">
     
      
+	 
      
-     
-     <h2><%= project.name %></h2>
+     <p align="right"><i><%= project.subtitle %></i></p>
+	 
+	 
+	      <h2><%= project.name %>
+		  
+		  <% if project.name.include? "Bloodwork" %>
+		  	 &nbsp;<a class="btn btn-default btn-fab"><i class="material-icons">opacity</i></a>
+		  	 <% end %>
+<% if project.name.include? "EKG" %>
+	 &nbsp;<a class="btn btn-default btn-fab">
+		 <!-- <i class="fa fa-heartbeat" style= "margin:18px"></i> -->
+	 <i class="material-icons">favorite</i>
+	 </a>
+	 <% end %>
+<% if project.name.include? "CXR" %>
+	 &nbsp;<a class="btn btn-default btn-fab"><i class="material-icons">filter_b_and_w</i></a>
+	 <% end %>	 
+<% if project.name.include? "Consent" %>
+	 &nbsp;<a class="btn btn-default btn-fab"><i class="material-icons">content_paste</i></a>
+	 <% end %>	
+	 <% if project.name.include? "Medical" %>
+	 	 &nbsp;<a class="btn btn-default btn-fab"><i class="material-icons">beenhere</i></a>
+	 <% end %>		 
+	 <% if project.name.include? "Skills" %>
+	 	 &nbsp;<a class="btn btn-default btn-fab"><i class="material-icons">healing</i></a>
+	 <% end %>
+	 <% if project.name.include? "SW" %>
+	 	 &nbsp;<a class="btn btn-default btn-fab"><i class="material-icons">leak_add</i></a>
+	 <% end %>
+
+	 </h2>
      <p>
      <% project.user_ids.each do |uid| %>
 	 	<% each_user = User.find(uid) %>
