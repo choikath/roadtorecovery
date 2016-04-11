@@ -35,7 +35,7 @@
 
 	 </h2>
      <p>
-     <% project.user_ids.each do |uid| %>
+     <!-- <% project.user_ids.each do |uid| %>
 	 	<% each_user = User.find(uid) %>
 		<% if each_user.usertype != "0" %>
 		<% if each_user.usertype == "1" %>
@@ -45,24 +45,24 @@
 				<% elsif each_user.school == "1" %>Med
 				<% elsif each_user.school == "1" %>Public
 				<% end %>
-			<% end %></i></font>
+			<% end %></i></font> -->
 		
 		
 		
-		<%elsif each_user.usertype == "2" %>
+		<!-- <%elsif each_user.usertype == "2" %>
 			<%= each_user.name %>
 			<% if each_user.title != 0 %>
-				<% if each_user.title == "1" %>,&nbsp;MD 
+				<% if each_user.title == "1" %>,&nbsp;MD
 				<% elsif each_user.title == "2" %>,&nbsp;NP
 				<% elsif each_user.title == "3" %>,&nbsp;RN
 				<% else %>
 				<% end %>
 			<% end %>
-		<%end%> 
+		<%end%>
 		<%end%>
      	;&nbsp;
 	 <% end %>
-     </p>
+     </p> -->
      <p>
      <%= project.description %> 
      </p>
